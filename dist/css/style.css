@@ -68,7 +68,7 @@ header {
     position: absolute;
     right: 0;
     top: 50%;
-    -webkit-transform: translateY(-50%); }
+    transform: translateY(-50%); }
 
 #section_1 {
   display: flex;
@@ -126,15 +126,13 @@ header {
       flex-direction: row; }
       #section_2 #section_2_content #row_2 #img_cover_1 {
         width: 40%;
-        margin: 10px; }
-        #section_2 #section_2_content #row_2 #img_cover_1 img {
-          width: 100%; }
+        margin: 10px;
+        background-image: url(../../images/img2.png); }
       #section_2 #section_2_content #row_2 #img_cover_2 {
         width: 60%;
         margin: 10px; }
         #section_2 #section_2_content #row_2 #img_cover_2 img {
-          width: 100%;
-          height: 100%; }
+          width: 100%; }
     #section_2 #section_2_content #row_3 {
       display: flex;
       flex-direction: row; }
@@ -153,10 +151,8 @@ header {
           width: 100%; }
       #section_2 #section_2_content #row_4 #img_cover_4 {
         margin: 10px;
-        width: 40%; }
-        #section_2 #section_2_content #row_4 #img_cover_4 img {
-          width: 100%;
-          height: 100%; }
+        width: 40%;
+        background-image: url(../../images/img2.png); }
   #section_2 #section_2_bottom {
     margin-top: 100px;
     margin-bottom: 100px; }
@@ -171,24 +167,80 @@ header {
 
 #section_4 #section_4_content {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  align-items: center; }
   #section_4 #section_4_content #section_4_left {
     display: flex;
-    flex-direction: column;
-    width: 400px; }
-    #section_4 #section_4_content #section_4_left p {
-      color: #b5b5b5;
-      line-height: 20px;
-      font-size: 18px;
-      position: relative; }
-    #section_4 #section_4_content #section_4_left span {
-      position: relative;
-      padding: 15px 40px;
-      font-size: 14px;
-      font-family: arial;
-      color: #0b6890;
-      border: 1px solid #b5b5b5; }
-    #section_4 #section_4_content #section_4_left div:nth-type-of(4) {
-      color: red; }
+    flex-direction: column; }
+    #section_4 #section_4_content #section_4_left div {
+      margin: 20px 0; }
+      #section_4 #section_4_content #section_4_left div:nth-of-type(5) {
+        color: #b5b5b5; }
+      #section_4 #section_4_content #section_4_left div p {
+        color: #b5b5b5;
+        line-height: 25px;
+        font-size: 18px;
+        width: 350px; }
+      #section_4 #section_4_content #section_4_left div span {
+        padding: 15px 40px;
+        font-size: 18px;
+        font-family: Chronicle Display Roman;
+        color: #0b6890;
+        border: 1px solid #b5b5b5;
+        margin-top: 100px; }
+  #section_4 #section_4_content #section_4_center {
+    display: flex;
+    flex-direction: column; }
+    #section_4 #section_4_content #section_4_center div {
+      margin: 10px 0; }
+      #section_4 #section_4_content #section_4_center div:nth-of-type(1) {
+        color: #b5b5b5;
+        font-size: 14px; }
+      #section_4 #section_4_content #section_4_center div:nth-of-type(2) {
+        color: #0b6890;
+        font-size: 22px; }
+      #section_4 #section_4_content #section_4_center div:nth-of-type(3) {
+        color: #b5b5b5;
+        font-size: 14px;
+        margin-top: 30px; }
+      #section_4 #section_4_content #section_4_center div:nth-of-type(4) {
+        color: #b5b5b5;
+        font-size: 14px;
+        margin-top: 30px; }
+        #section_4 #section_4_content #section_4_center div:nth-of-type(4) em {
+          margin-right: 10px; }
+  #section_4 #section_4_content #section_4_right {
+    display: flex;
+    flex-direction: column; }
+    #section_4 #section_4_content #section_4_right div {
+      margin: 10px 0; }
+      #section_4 #section_4_content #section_4_right div:nth-of-type(1) {
+        color: #b5b5b5;
+        font-size: 14px; }
+      #section_4 #section_4_content #section_4_right div:nth-of-type(2) {
+        color: #0b6890;
+        font-size: 22px; }
+      #section_4 #section_4_content #section_4_right div:nth-of-type(3) {
+        color: #b5b5b5;
+        font-size: 14px;
+        margin-top: 30px; }
+      #section_4 #section_4_content #section_4_right div:nth-of-type(4) {
+        color: #0b6890;
+        font-size: 22px;
+        margin-top: 30px; }
+
+footer {
+  background-image: url(../../images/bg.png);
+  background-color: red;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: Chronicle Display Roman; }
+  footer p {
+    margin-top: 20px; }
 
 /*# sourceMappingURL=style.css.map */
