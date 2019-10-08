@@ -1,1 +1,1 @@
-ndoe_modules yok
+node_modules yok
