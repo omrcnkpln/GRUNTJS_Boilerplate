@@ -1,0 +1,293 @@
+// ------------------------------------------------------------
+  // a href le sayfanın ğstğne giderken transition yemiyo
+  //rgba(0,0,0,0.5); bir üsteki bg colorun rengine işlem yapar
+
+// ------------------------------------------------------------
+
+// FONTS
+@import url('../../fonts/playfair_display/stylesheet.css');
+@font-face{
+  font-family: 'Chronicle Display Roman';
+  src: url('../../fonts/Chronicle Display Roman/Chronicle Display Roman.otf');
+}
+@font-face{
+  font-family: 'FiraSans';
+  src: url('../../fonts/fira-sans/FiraSans-Regular.otf');
+}
+@font-face{
+  font-family: 'FiraSansLight';
+  src: url('../../fonts/fira-sans/FiraSans-Light.otf');
+}
+@font-face{
+  font-family: 'FiraSansUltraLight';
+  src: url('../../fonts/fira-sans/FiraSans-UltraLight.otf');
+}
+// COLORS
+$blue:#0b6890;
+$lblue:#1D7C96;
+$white:#fff;
+.center{
+  width: 80%;
+  margin: 0 auto;
+}
+// h2{
+//         font-family: 'playfair_displayregular';
+//         // font-family: arial;
+//         font-weight: bold;
+//         // font-family: verdana;
+//         font-size: 55px;
+//         color: #0b6890;
+//       }
+// .number{
+//         font-family: 'playfair_displayregular';
+//         font-size: 78px;
+//         color: #b5b5b5;
+//       }
+
+
+header{
+  height: 100px;
+  background: $blue;
+  color: $white;
+  box-shadow: 0px 0px 5px 0px black;
+  position: relative;
+  z-index: 1;
+  .center{
+    display: flex;
+    justify-content: flex-end;
+    ul{
+      display: flex;
+      flex-direction: row;
+      li{
+        line-height: 100px;
+        display: flex;
+        a{
+          background-color:rgba(0,0,0,0.2);
+          margin: auto 20px;
+          padding: 0px 10px 0px 10px; 
+          align-items: center;
+          color: $white;  
+        }
+      }
+    }
+  }    
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // LEFT_SECTION
+#left_section{
+  margin-top: -100px;
+  width: 50px;
+  height: 100vh;
+  background-color: #1D7C96;
+  position: fixed;
+  box-shadow: 0px 0px 5px 0px #1D7C96;
+  #left_container{
+    ul{
+      margin-top: 150px;
+      width: 50px;
+      li{
+        margin: 25px auto;
+        text-align: center;
+        font-size: 35px;
+        position: relative;
+        overflow: hidden;
+        a{
+          color:$white;
+          padding: 10px 0;
+          display: block;
+          transition: all .5s ease;
+          &:hover{
+            transform: scale(1.25);
+          }
+        }
+      }
+    }
+  }
+}
+
+// MAIN_SECTION
+#main_section{
+  width: 50%;
+  height: 5000px;
+  margin: 30px auto 0  200px;
+  box-shadow: 0px 0px 5px 0px black;
+  border-radius: 5px;
+  background-color: #eee;
+  .item{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 5px;
+    padding: 10px;
+    .item_top{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .item_top_left{
+        ul{
+          display: flex;
+          flex-direction: row;  
+          li{
+            a{
+              color: $lblue;
+              font-size: 20px;
+              line-height: 40px;
+              margin-right:20px;
+              img{
+                // width: 50px;
+                // height: 50px;
+                margin: 5px;
+                margin-top: -3px;
+                padding: 25px;
+                background-color: $blue;
+                border-radius: 25px;
+              }
+            }
+          }
+        }
+      }
+      .item_top_right{
+        margin-right: 20px;
+        a{
+          color: $blue;
+          font-size: 30px;
+        }
+      }
+    }
+    .item_center{
+      background-color: $lblue;
+      border-radius: 5px;
+      width: 100%;
+      height: 200px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    // bu bir yol olabilir belki
+    .item_bottom{
+      // height: 200px;
+      // background-color: red;
+      // overflow: hidden;
+      .item_bottom_top{
+        ul{
+          margin-bottom: 20px;
+          margin-right: 20px;
+          margin-left: 20px;
+          li{
+            display: flex;
+            justify-content: space-between;
+            
+            a{
+              font-size: 30px;
+              color: $lblue
+            }
+          }
+        }
+      }
+      .item_bottom_center{
+        .comments{
+          ul{
+            width: 100%;
+            li{
+              display: flex;
+              justify-content: space-between;
+              padding: 5px;
+              font-size: 17px;
+              .user{
+                font-weight: bold;
+                
+              }
+              .user_commit{
+                letter-spacing: 1px;
+                
+              }
+              a{
+                color: $lblue;
+                
+              }
+            }
+          }
+        }
+      }
+      .item_bottom_bottom{
+        .form_container{
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
+          input{
+            
+            &:first-child{
+              line-height: 50px;
+              padding-left: 20px;
+              font-size: 15px;
+            }
+            &:last-child{
+              // padding: 0 20px;
+              color: grey;
+              background-color: #fff;
+              &:hover{
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//RIGHT_SECTION
+#right_section{
+  width: 250px;
+  height: 400px;
+  align-content: center;
+  right: 50px;
+  bottom: 0;
+  position: fixed;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #eee ;
+  //soldan uzaklık,yukardan uzaklık,blur dolulugu,dış uzunlugu
+  box-shadow: 0px 0px 5px 0px black;
+  #right_container{
+    ul{
+      li{
+        
+        a{
+          // color:$white;
+        }
+      }
+    }
+  }
+}
+
+}
+
+.footer{
+  height:100px;
+  background-color: $blue;
+  width: 100%;
+  position: relative;
+  z-index: -1;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 100px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
