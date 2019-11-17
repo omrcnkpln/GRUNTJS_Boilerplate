@@ -1,15 +1,17 @@
 <?php
+//isset kullanmak önemli aga yoksa 133 de sikinti çikiyo.14de de aynı olmuştu.@ kullanmıştık şimdi değiştirdik.
+// Değişken b urda tanımlı değilse sıkıntı çıkıyo galiba ama isset deyince çözülüyo.
 //çıkış yapmadan çıkıp tekrar girdiğinde hala oturumu açık tutma olayı galiba cookie ile yapılacak. O olmadı.
+//session tarayıcı kapanana kadar cookie sürekli
 // başta session_start deyince olanı alıyo
-// git gel işlerinde sıkıntı var. neye göre oturum açtıpını görüp işelm yaptırcaz ?
+// git gel işlerinde sıkıntı var. neye göre oturum açtıpını görüp işlem yaptırcaz ?
 
 include("ayarlar.php");
-include("comment.php");
 
-@session_start();
+session_start();
 
 
-if(@!$_SESSION["oturum"]){
+if(!isset($_SESSION["oturum"])){
 	echo "ziyaretçi";
 }
 
@@ -46,7 +48,7 @@ if(@!$_SESSION["oturum"]){
 		<div class="header_right">
 
 			<?php
-				if(@$_SESSION["oturum"]){
+				if(isset($_SESSION["oturum"])){
 					echo '
 						<ul id = "online">
 
@@ -129,7 +131,7 @@ if(@!$_SESSION["oturum"]){
 						<li>
 							<a href="#">
 								<?php
-									if($_SESSION["oturum"]){
+									if(isset($_SESSION["oturum"])){
 										echo $_SESSION["isim"].$_SESSION["soyisim"];
 									}
 								?>
@@ -194,11 +196,12 @@ if(@!$_SESSION["oturum"]){
 				</div>
 
 				<div class="item_bottom_bottom">
-					<form action="" method="POST">
+					<form action="comment.php" method="POST">
 						<div class="form_container">
 							
 							<input type="text" name = "yorum" placeholder="Salla Biseler...">
-							<input type="submit" value="SEND">
+							<!-- button yazınca oluyo input submit deyince olmuyo postalma olayında -->
+							<button type="submit" name="new_comment">SEND</button>
 							
 						</div>
 					</form>

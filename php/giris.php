@@ -8,9 +8,15 @@ if($_POST){
 	
     if(!empty($mail) && !empty($sifre)){
 
-		$user = mysqli_query($baglan,"SELECT * FROM users WHERE mail = '$mail' && sifre = '$sifre'");
+        $find_user = mysqli_query($baglan,"SELECT * FROM users WHERE mail ='$mail' AND sifre ='$sifre'");
 
-        if(!empty($user)){
+        if($find_user){
+            $verify_user = mysqli_num_rows($find_user);
+        }else{
+            $verify_user = 0;
+        }
+        //direk altaki if e sokarsan false deger döndüğünde hata veriyor !!, Bazen de vermiyo aq!!
+        if($verify_user > 0){        
             
             session_start();
             
@@ -33,17 +39,18 @@ if($_POST){
             header("location:index.php");
 
         }else{
-            echo "boyle bir kullanıcı bulanamadı";
-            header("refresh:2; url = index.php");
+            echo "Kullanıcı adı ya da şifre hatalı.. <br> Tekrar deneyin !";
+            header("refresh:1; url = giris.php");
         }
     }else{
-        echo "Bir hata oluştu.</br>Yeniden denemek için kayıt sayfasına gidin<a href='giris.php'>Tekrar dene</a>";
+        echo "Lütfen tüm alanları doldurun..";
+        header("refresh:1; url = giris.php");
     }
 
 }else{
 	// header("refersh: 2; url = index.php");
 }
-
+//html kısmı else in içine de yazılabilirdi belki
 ?>
 
 <!DOCTYPE html>
@@ -74,19 +81,27 @@ if($_POST){
                 <table cellpadding = "5" cellspacing = "5" >
 
                     <tr>
+                    
                         <td>Mail:</td>
-                        <td><input type="text" name = "mail"/></td>
+                        <td colspan=2><input type="text" name = "mail" autofocus/></td>
+                        
                     </tr>
 
                     <tr>
+                    
                         <td>Sifre:</td>
-                        <td><input type="password" name = "sifre"/></td>
+                        <td colspan=2><input type="password" name = "sifre"/></td>
+                        
                     </tr>
 
                     <tr>
                         <td></td>
                         <td><input type="submit" value = "Giris Yap"/></td>
+                        <!-- tipi buton olan input tagını formdan bağımsız olarak başka sayfaya yönlendirdik -->
+                        <td><input type="button" value = "Kaydol" onclick="window.location='kayit.php';"></td>
+                        
                     </tr>
+
 
                 </table>
             </form>
