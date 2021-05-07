@@ -10,9 +10,9 @@ module.exports = function (grunt) {
         implementation: sass,
         sourceMap: true
       },
-      dest: {
+      dist: {
         files: {
-          'src/css/pasadagli-main.css': 'src/scss/pasadagli-main.scss'
+          'src/css/style.css': 'src/scss/style.scss'
         }
       }
     },
@@ -23,17 +23,16 @@ module.exports = function (grunt) {
       },
 
       dist: {
-        files: {
-          'src/css/prefix/main.css': 'src/css/main.css',
-          'src/css/prefix/pasadagli-main.css': 'src/css/pasadagli-main.css',
-        }
+        target: [
+          'src/css/style.css'
+        ]
       }
     },
 
     cssmin: {
       build: {
         files: {
-          'dest/css/pasadagli-main.min.css': 'src/css/prefix/*.css',
+          'dist/css/main.min.css': 'src/css/*.css',
         }
       }
     },
@@ -44,7 +43,7 @@ module.exports = function (grunt) {
     //   },
     //   dist: {
     //     src: ['src/js/basic-slider.js', 'src/js/akademi-slider.js'],
-    //     dest: 'src/js/bundle.js',
+    //     dist: 'src/js/bundle.js',
     //   },
     // },
 
@@ -65,7 +64,7 @@ module.exports = function (grunt) {
         fix: true
       },
       target: [
-        'src/js/akademi-slider-2.js'
+        'src/js/*.js'
       ]
     },
 
@@ -74,30 +73,9 @@ module.exports = function (grunt) {
         sourceMap: true,
         presets: ["@babel/preset-env"],
       },
-      dest: {
+      dist: {
         files: {
-          'src/js/babel/akademi-slider.js': 'src/js/akademi-slider.js',
-          'src/js/babel/akademi-slider-2.js': 'src/js/akademi-slider-2.js',
-          'src/js/babel/anasayfa-slider.js': 'src/js/anasayfa-slider.js',
-          'src/js/babel/basic-slider.js': 'src/js/basic-slider.js',
-          'src/js/babel/basic-slider-2.js': 'src/js/basic-slider-2.js',
-          'src/js/babel/contents-slider.js': 'src/js/contents-slider.js',
-          'src/js/babel/header.js': 'src/js/header.js',
-          'src/js/babel/header-bg-transparent.js': 'src/js/header-bg-transparent.js',
-          'src/js/babel/header-bg-white.js': 'src/js/header-bg-white.js',
-          'src/js/babel/header-bg-white-2.js': 'src/js/header-bg-white-2.js',
-          'src/js/babel/hizmetler.js': 'src/js/hizmetler.js',
-          'src/js/babel/iletisim-2.js': 'src/js/iletisim-2.js',
-          'src/js/babel/loader.js': 'src/js/loader.js',
-          'src/js/babel/makaleSlider.js': 'src/js/makaleSlider.js',
-          'src/js/babel/odul-kazanan-ogrenciler.js': 'src/js/odul-kazanan-ogrenciler.js',
-          'src/js/babel/ogr-ajax.js': 'src/js/ogr-ajax.js',
-          'src/js/babel/ogr-modal.js': 'src/js/ogr-modal.js',
-          'src/js/babel/sepetim.js': 'src/js/sepetim.js',
-          'src/js/babel/site.js': 'src/js/site.js',
-          'src/js/babel/timeline.js': 'src/js/timeline.js',
-          'src/js/babel/timeline-3.js': 'src/js/timeline-3.js',
-          'src/js/babel/yayinlar-slider.js': 'src/js/yayinlar-slider.js',
+          'src/js/babel/custom.js': 'src/js/custom.js',
         },
       },
     },
@@ -106,30 +84,9 @@ module.exports = function (grunt) {
       options: {
         compress: true,
       },
-      dest: {
+      dist: {
         files: {
-          'dest/js/akademi-slider.min.js': 'src/js/babel/akademi-slider.js',
-          'dest/js/akademi-slider-2.min.js': 'src/js/babel/akademi-slider-2.js',
-          'dest/js/anasayfa-slider.min.js': 'src/js/babel/anasayfa-slider.js',
-          'dest/js/basic-slider.min.js': 'src/js/babel/basic-slider.js',
-          'dest/js/basic-slider-2.min.js': 'src/js/babel/basic-slider-2.js',
-          'dest/js/contents-slider.min.js': 'src/js/babel/contents-slider.js',
-          'dest/js/header.min.js': 'src/js/babel/header.js',
-          'dest/js/header-bg-transparent.min.js': 'src/js/babel/header-bg-transparent.js',
-          'dest/js/header-bg-white.min.js': 'src/js/babel/header-bg-white.js',
-          'dest/js/header-bg-white-2.min.js': 'src/js/babel/header-bg-white-2.js',
-          'dest/js/hizmetler.min.js': 'src/js/babel/hizmetler.js',
-          'dest/js/iletisim-2.min.js': 'src/js/babel/iletisim-2.js',
-          'dest/js/loader.min.js': 'src/js/babel/loader.js',
-          'dest/js/makaleSlider.min.js': 'src/js/babel/makaleSlider.js',
-          'dest/js/odul-kazanan-ogrenciler.min.js': 'src/js/babel/odul-kazanan-ogrenciler.js',
-          'dest/js/ogr-ajax.min.js': 'src/js/babel/ogr-ajax.js',
-          'dest/js/ogr-modal.min.js': 'src/js/babel/ogr-modal.js',
-          'dest/js/sepetim.min.js': 'src/js/babel/sepetim.js',
-          'dest/js/site.min.js': 'src/js/babel/site.js',
-          'dest/js/timeline.min.js': 'src/js/babel/timeline.js',
-          'dest/js/timeline-3.min.js': 'src/js/babel/timeline-3.js',
-          'dest/js/yayinlar-slider.min.js': 'src/js/babel/yayinlar-slider.js',
+          'dist/js/custom.min.js': 'src/js/babel/custom.js',
         }
       }
     },
@@ -138,8 +95,8 @@ module.exports = function (grunt) {
       dev: {
         bsFiles: {
           src: [
-            'dest/css/*.css',
-            'dest/js/*.js',
+            'dist/css/*.css',
+            'dist/js/*.js',
             '*.html',
             // 'logs/*.html'
           ]

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../custom.js"],"names":["$","document","ready","console","log"],"mappings":";;AAAAA,CAAC,CAACC,QAAD,CAAD,CAAYC,KAAZ,CAAkB,YAAM;AACtBC,EAAAA,OAAO,CAACC,GAAR,CAAY,mBAAZ;AACD,CAFD","sourcesContent":["$(document).ready(() => {\n  console.log('Hello World !! :)');\n});\n"],"file":"custom.js"}
